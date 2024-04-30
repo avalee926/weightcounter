@@ -75,3 +75,42 @@ img.display-weight {
     width: 50px; /* Adjust size as necessary */
     margin: 5px;
 }
+/* Base styles */
+.weight, .barbell {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Small devices (phones) */
+@media (max-width: 600px) {
+    .weight, .barbell {
+        width: 75px; /* smaller size for smaller screens */
+    }
+}
+
+/* Medium devices (tablets in portrait mode) */
+@media (min-width: 600px) {
+    .weight, .barbell {
+        width: 90px;
+    }
+}
+
+/* Large devices (tablets in landscape mode) */
+@media (min-width: 768px) {
+    .weight, .barbell {
+        width: 100px;
+    }
+}
+
+/* Extra Large devices (large tablets, laptops) */
+@media (min-width: 992px) {
+    .weight, .barbell {
+        width: 120px;
+    }
+}
+
+/* Adjust the max-width of the container elements as well */
+#current-bar-container, #current-weights-container {
+    max-width: 90%; /* Or any percentage/fixed width that fits your design */
+    margin: 0 auto; /* Centers the containers */
+}
