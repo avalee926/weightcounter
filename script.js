@@ -60,4 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
         currentBarDisplay.style.display = 'none'; // Hide the bar image
         currentWeightsDisplay.innerHTML = ''; // Clear all weight plates
     });
+    function adjustHeight() {
+        document.body.style.height = `${window.innerHeight}px`;
+    }
+    
+    window.addEventListener('resize', adjustHeight);
+    adjustHeight();
 });

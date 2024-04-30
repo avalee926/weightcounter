@@ -2,50 +2,92 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Set body height to viewport height */
 }
 
-.weight {
-    width: 100px;
-    margin: 10px;
+h1 {
+    font-size: 1.5rem; /* Adjusted font size */
+    margin-top: 0;
+}
+
+#weights-container, #bars-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.weight, .barbell {
     cursor: pointer;
+    transition: transform 0.1s; /* Smooth transformation on click */
 }
 
-
-#total-weight {
-    margin-top: 20px;
-    font-size: 24px;
-    position: relative; /* Adjust this for precise positioning */
-    top: 20px; /* Move down slightly */
-    display: inline-block; /* Allows horizontal alignment with the button */
+.weight:active, .barbell:active {
+    transform: scale(0.9); /* Slightly reduce size when clicked */
 }
 
+/* Small devices (phones) */
+@media (max-width: 600px) {
+    .weight, .barbell {
+        width: 20%; /* Dynamic width */
+        max-width: 75px; /* Maximum size */
+        min-width: 45px; /* Minimum size */
+        margin: 4px;
+    }
 
-
-.barbell {
-    width: 175px; /* Larger size for barbell images */
-    margin: 15px; /* Optional: Increase margin if needed */
+    h1 {
+        font-size: 1.2rem; /* Smaller font size */
+    }
 }
 
+/* Medium devices (tablets in portrait mode) */
+@media (min-width: 600px) and (max-width: 768px) {
+    .weight, .barbell {
+        width: 20%;
+        max-width: 90px;
+        margin: 5px;
+    }
+}
+
+/* Large devices (tablets in landscape mode) */
+@media (min-width: 768px) {
+    .weight, .barbell {
+        width: 15%;
+        max-width: 100px;
+        margin: 5px;
+    }
+}
+
+/* Extra Large devices (large tablets, laptops) */
+@media (min-width: 992px) {
+    .weight, .barbell {
+        width: 10%;
+        max-width: 120px;
+        margin: 8px;
+    }
+}
+
+#total-weight, #clear-button {
+    font-size: 1rem; /* Smaller font size */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
 #clear-button {
-    position: relative; /* Adjust this for precise positioning */
-    top: 20px; /* Move down slightly */
-    margin-left: 20px; /* Space between the total weight display and the button */
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block; /* Allows horizontal alignment with the total weight display */
+    padding: 5px 10px;
+    margin-top: 0; /* Adjusted margin */
 }
 
-/* Optional: Style adjustments for better visibility */
-#clear-button:hover {
-    background-color: #f0f0f0;
-}
 #current-setup {
+    flex-grow: 1; /* Take up remaining space */
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 20px;
 }
 
 #current-bar-container, #current-weights-container {
@@ -55,62 +97,14 @@ body {
     min-height: 150px;
 }
 
-#current-bar-container img {
+#current-bar-container img, #current-weights-container img {
     max-width: 100%; /* Ensures image does not exceed container width */
     height: auto; /* Keeps the aspect ratio of the image */
     max-height: 150px; /* Adjust this to fit the size you want */
-    display: block; /* Image will be block level to fit the width of the container */
-    margin: 0 auto; /* Centers the image within the container */
 }
 
-
-
-#current-weights {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; /* Align plates to the start */
-}
-
-img.display-weight {
-    width: 50px; /* Adjust size as necessary */
-    margin: 5px;
-}
-/* Base styles */
-.weight, .barbell {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Small devices (phones) */
-@media (max-width: 600px) {
-    .weight, .barbell {
-        width: 75px; /* smaller size for smaller screens */
-    }
-}
-
-/* Medium devices (tablets in portrait mode) */
-@media (min-width: 600px) {
-    .weight, .barbell {
-        width: 90px;
-    }
-}
-
-/* Large devices (tablets in landscape mode) */
-@media (min-width: 768px) {
-    .weight, .barbell {
-        width: 100px;
-    }
-}
-
-/* Extra Large devices (large tablets, laptops) */
-@media (min-width: 992px) {
-    .weight, .barbell {
-        width: 120px;
-    }
-}
-
-/* Adjust the max-width of the container elements as well */
-#current-bar-container, #current-weights-container {
-    max-width: 90%; /* Or any percentage/fixed width that fits your design */
-    margin: 0 auto; /* Centers the containers */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
