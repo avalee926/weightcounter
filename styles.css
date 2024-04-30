@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.weight {
+    width: 100px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+#total-weight {
+    margin-top: 20px;
+    font-size: 24px;
+    position: relative; /* Adjust this for precise positioning */
+    top: 20px; /* Move down slightly */
+    display: inline-block; /* Allows horizontal alignment with the button */
+}
+
+
+
+.barbell {
+    width: 175px; /* Larger size for barbell images */
+    margin: 15px; /* Optional: Increase margin if needed */
+}
+
+
+#clear-button {
+    position: relative; /* Adjust this for precise positioning */
+    top: 20px; /* Move down slightly */
+    margin-left: 20px; /* Space between the total weight display and the button */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block; /* Allows horizontal alignment with the total weight display */
+}
+
+/* Optional: Style adjustments for better visibility */
+#clear-button:hover {
+    background-color: #f0f0f0;
+}
+#current-setup {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#current-bar-container, #current-weights-container {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-height: 150px;
+}
+
+#current-bar-container img {
+    max-width: 100%; /* Ensures image does not exceed container width */
+    height: auto; /* Keeps the aspect ratio of the image */
+    max-height: 150px; /* Adjust this to fit the size you want */
+    display: block; /* Image will be block level to fit the width of the container */
+    margin: 0 auto; /* Centers the image within the container */
+}
+
+
+
+#current-weights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align plates to the start */
+}
+
+img.display-weight {
+    width: 50px; /* Adjust size as necessary */
+    margin: 5px;
+}

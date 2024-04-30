@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Weight Calculator</h1>
+    <div id="weights-container">
+        <!-- Example for one weight -->
+        <img src="1pointtwofive.png" alt="1.25 lb weight" class="weight" data-weight="1.25">
+        <img src="2point5pound.png" alt="2.5 lb weight" class="weight" data-weight="2.5">
+        <img src="5pound.png" alt="5 lb weight" class="weight" data-weight="5">
+        <img src="10pound.png" alt="10 lb weight" class="weight" data-weight="10">
+        <img src="25pound.png" alt="25 lb weight" class="weight" data-weight="25">
+        <img src="45pound.png" alt="45 lb weight" class="weight" data-weight="45">
+    </div>
+    <div id="bars-container">
+        <img src="barbell.png" alt="Straight Barbell" class="barbell weight" data-weight="45">
+        <img src="trap_bar.png" alt="Hexagonal Barbell" class="barbell weight" data-weight="55">
+        <img src="swissbar.png" alt="Swiss Barbell" class="barbell weight" data-weight="35">
+    </div>
+    <div id="total-weight">Total Weight: 0 lbs</div>
+    <button id="clear-button">Clear</button>
+    <div id="current-setup">
+        <h2>Current Setup</h2>
+        <div id="current-bar-container">
+            <img id="current-bar" src="" alt="Current Barbell" style="display: none;"> <!-- Initially hidden -->
+        </div>
+        <div id="current-weights-container">
+            <h3>Current Plates</h3>
+            <div id="current-weights"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
